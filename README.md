@@ -1,7 +1,13 @@
-rewriter
+Rewriter
 ========
 
 Generate Apache Rewrite Rules from a given list of source / destination URLs. 
+
+
+Demo
+========
+
+Visit http://rewriter.obush.co.uk to give it a whirl!
 
 
 Usage
