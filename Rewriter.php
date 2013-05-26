@@ -31,8 +31,14 @@ class Rewriter{
 	 */
 	public function generateRewritesFromArray(array $urls = array()){
 		if(is_array($urls)){
-			$this->urls = $urls;
-			
+			foreach($urls as $source => $destination){
+				// Make sure the destination is not an array
+				if(is_array($destination)){
+					throw new Exception('Destinations cannot be arrays. Check the destination for: ' . $source);
+				}
+				$this->urls[$source] = $destination;
+			}
+
 			// Build the rewrites
 			return $this->buildRewrites();
 		}else{
